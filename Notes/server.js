@@ -47,8 +47,17 @@ app.get('/me', middle1, middle2, (req, res) => {
     res.send("middleware chaining");
 });
 
-const PORT = 6001;
 
-app.listen(PORT, () => {
-    console.log(`Server up and running at ${PORT}`);
-});
+
+// app.listen(PORT, () => {
+//     console.log(`Server up and running at ${PORT}`);
+// });
+
+const PORT = process.env.PORT || 6001;
+mongoose.connect(process.env.MONGODB_URL)
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(`${error} did not connect222222`));
+
+ 

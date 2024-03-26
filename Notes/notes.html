@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Move the script tag to the end of the body or inside the head -->
+</head>
+<body>
+    <!-- Your HTML content here -->
+    
+    <!-- <script>
+        function doSomething(callback){
+            setTimeout(function(){
+               console.log("yo");
+               callback();
+            },2000);
+        };
+        function callback(){
+            console.log("Callback function is evoked");
+        }
+      doSomething(callback);
+      
+
+    </script> -->
+    <script>
+        function placeOrder1(){
+            return new Promise(function(resolve){
+                setTimeout(()=>{
+                    const burger = "delicious burger";
+                })
+            },2000);
+        }
+        function cookBurger(){
+            return new Promise(function(resolve){
+                setTimeout(() =>{
+
+                })
+            })
+        }
+
+        function placeOrder() {
+    return new Promise(function(resolve) {
+      // Simulating placing an order
+      setTimeout(function() {
+        const burger = 'Delicious Burger';
+        console.log('Order placed:', burger);
+        resolve(burger);
+      }, 2000);
+    });
+  }
+  
+  function cookBurger(burger) {
+    return new Promise(function(resolve) {
+      // Simulating cooking the burger
+      console.log(burger + ' is cooking...');
+      setTimeout(function() {
+        
+        resolve(burger);
+      }, 7000);
+      
+    });
+  }
+  
+  function serveBurger(burger) {
+    return new Promise(function(resolve) {
+      // Simulating serving the burger
+      setTimeout(function() {
+        console.log(burger + ' is ready! Enjoy!');
+        resolve(burger);
+      }, 1000);
+    });
+  }
+  
+  function eatBurger(burger) {
+    // Simulating eating the burger
+    console.log('Eating ' + burger + '... Nom nom nom!');
+  }
+  
+  // Chain the functions
+  placeOrder()
+    .then(cookBurger)
+    .then(serveBurger)
+    .then(eatBurger)
+    .catch(() => {
+        console.log("Some error occurred");
+    });
+
+    </script>
+</body>
+</html>

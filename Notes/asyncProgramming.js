@@ -28,7 +28,6 @@ cookBurger(eatBurger);
 
 function placeOrder() {
     return new Promise(function(resolve) {
-      // Simulating placing an order
       setTimeout(function() {
         const burger = 'Delicious Burger';
         console.log('Order placed:', burger);
@@ -36,6 +35,7 @@ function placeOrder() {
       }, 1000);
     });
   }
+  
   
   function cookBurger(burger) {
     return new Promise(function(resolve) {
