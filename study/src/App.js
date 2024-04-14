@@ -1,6 +1,6 @@
 import React from 'react';
 import MyProvider from './MyContext';
-import MyComponent from './MyComponent';
+import MyComponent from './Components/MyComponent';
 import MyComponentWithLoading from './hoc';
 function App() {
     return (

@@ -16,3 +16,5 @@ shallowCopy.address.city = "San Francisco";
 
 // Changes are reflected in the original object
 console.log(originalObj.address.city); // Outputs: San Francisco
+
+
