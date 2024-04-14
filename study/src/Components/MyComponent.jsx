@@ -1,5 +1,5 @@
 import React, { useContext,useEffect,useMemo,useRef,useCallback } from 'react';
-import { MyContext } from './MyContext';
+import { MyContext } from '../MyContext';
 
 export default function MyComponent() {
     const { data } = useContext(MyContext);

@@ -8,6 +8,11 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.send("yo");
 });
+const commonFn = (req, res, next) => {
+    console.log("you have entered common middleware function");
+    next(); 
+};
+app.use(commonFn);
 
 app.get('/lol/:param1/:param2', (req, res) => {
     const params = req.params;
@@ -18,7 +23,7 @@ app.get('/hello', (req,res)=>{
 })
 
 const middleFn = (req, res, next) => {
-    req.params.name = capitalize(req.params.name);
+    req.params.username = capitalize(req.params.username);
     next(); 
 };
 
@@ -48,16 +53,16 @@ app.get('/me', middle1, middle2, (req, res) => {
 });
 
 
+
+// app.listen(PORT, () => {
+//     console.log(`Server up and running at ${PORT}`);
+// });
+
 const PORT = process.env.PORT || 6001;
-
-app.listen(PORT, () => {
-    console.log(`Server up and running at ${PORT}`);
-});
-
-// mongoose.connect(process.env.MONGODB_URL)
-//   .then(() => {
-//     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-//   })
-//   .catch((error) => console.log(`${error} did not connect222222`));
+mongoose.connect(process.env.MONGODB_URL)
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(`${error} did not connect222222`));
 
  
