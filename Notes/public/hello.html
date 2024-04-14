@@ -10,4 +10,18 @@
 <body>
     
 </body>
+<script>
+    function fn(){
+        let count = 0;
+        return function(){
+            count++;
+            console.log(count);
+        }
+    }
+    const counter = fn();
+    counter();
+    counter();
+    counter();
+
+</script>
 </html>

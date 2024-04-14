@@ -12,6 +12,7 @@ export default function MyComponent() {
       inputRef.current.focus();
       inputRef.current.style.color = 'red';
       }, []);
+      
     useEffect(() =>{
        console.log("yo");
        return() =>{
