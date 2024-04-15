@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 // Higher Order Component for Loading Spinner
 const withLoadingSpinner = (WrappedComponent) => {
+  const idk = useMemo(() =>{
+    
+  },[])
   return (props) => {
     const [isLoading, setIsLoading] = useState(true);
 
